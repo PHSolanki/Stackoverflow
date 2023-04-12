@@ -46,6 +46,7 @@ export class SignUpComponent {
         if(sign_up_res){
 
           console.log("sign_up_res",sign_up_res)
+          
           localStorage.setItem("Sign_up_User",JSON.stringify(this.signIn.value))
 
           this.router.navigate(['/users/login'])

@@ -50,6 +50,8 @@ export class LoginComponent {
         if((sign_up_data_res.email==this.user_login.value.email) && (sign_up_data_res.password==this.user_login.value.password)){
 
           this._userauthservice.get_Login_data(this.user_login.value)
+
+          localStorage.setItem("Login cred" , JSON.stringify(this.user_login.value))
        
           this.router.navigate(['/home']);  
           this.message=""

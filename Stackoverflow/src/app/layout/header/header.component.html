@@ -36,8 +36,14 @@
 
       <div class="d-flex align-items-center">
 
-        <button class="btn btn-sm mx-2 btn-outline-primary" routerLink="/user/login">Log In</button>
-        <button class="btn btn-primary btn-sm" routerLink="/user/signup">Sign up</button>
+
+        <button class="btn btn-sm mx-2 btn-outline-primary" routerLink="/user/login" *ngIf="btn == 'Login'; else Logout">Login</button>
+     
+        <button class="btn btn-primary btn-sm" routerLink="/user/signup" [hidden]="!Registered_User">Sign up</button>
+
+        <ng-template #Logout>
+              <button class="btn btn-outline-primary btn-sm mx-2" (click)="logout()">Logout</button>
+        </ng-template>
 
 
       </div>
