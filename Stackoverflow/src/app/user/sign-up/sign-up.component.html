@@ -1,1 +1,59 @@
-<p>sign-up works!</p>
+<div class="text-center my-3 d-flex justify-content-center align-items-center">
+
+  <div>
+    <p id="product_list_text" class="card-title fs-1 fw-bolder">Sign Up</p>
+  </div>
+
+</div>
+
+<form class="row g-3 m-lg-5 d-flex justify-content-center" [formGroup]="signIn" (ngSubmit)="onSignUp()" novalidate>
+
+  <div class="row g-2 justify-content-center">
+ 
+    <div class="col-md-5">
+
+      <label for="username" class="form-label">Display Name</label>
+      <input type="text" formControlName="username" class="form-control" id="inputusername" placeholder="Enter Username">
+      <div *ngIf="signUp_details.username.touched && signUp_details.username.invalid" class="text-danger">
+        <div *ngIf="signUp_details.username.errors?.['required']" class="text-danger">Display name is Required</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="row g-2 justify-content-center">
+
+    <div class="col-md-5">
+
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" formControlName="email" class="form-control" id="inputEmail4" placeholder="Enter Email">
+      <div *ngIf="signUp_details.email.touched && signUp_details.email.invalid" class="text-danger">
+        <div *ngIf="signUp_details.email.errors?.['required']" class="text-danger">Email is Required</div>
+        <div *ngIf="signUp_details.email.errors?.['email']" class="text-danger">Please Enter Valid Email address</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row g-2 justify-content-center">
+
+    <div class="col-md-5">
+
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" formControlName="password" class="form-control" id="inputPassword4" placeholder="Enter Password">
+      <div *ngIf="signUp_details.password.touched && signUp_details.password.invalid" class="text-danger">
+        <div *ngIf="signUp_details.password.errors?.['required']" class="text-danger">Password is Required</div>
+        <div *ngIf="signUp_details.password.errors?.['minlength']" class="text-danger">Password Should be 8 Character</div>
+      </div>
+
+    </div>
+
+  </div>
+
+    
+    <div class="d-grid gap-2 col-10 d-md-block text-center">
+      <button type="submit" [disabled]="!signIn.valid" class="btn btn-primary col-md-2 text-center">Sign in</button>
+    </div>
+
+</form>
