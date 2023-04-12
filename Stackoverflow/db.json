@@ -1,5 +1,10 @@
 {
-    "Register" : [
-        
-    ]
+  "signup": [
+    {
+      "displayname": "priyanshu_235",
+      "email": "abc@gmail.com",
+      "password": "12345678",
+      "id": 1
+    }
+  ]
 }

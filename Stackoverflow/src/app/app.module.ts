@@ -9,13 +9,15 @@ import { HeaderComponent } from './layout/header/header.component';
 import { ErrorComponent } from './error/error.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ErrorComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

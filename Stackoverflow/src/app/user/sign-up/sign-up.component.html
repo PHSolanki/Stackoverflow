@@ -6,16 +6,16 @@
 
 </div>
 
-<form class="row g-3 m-lg-5 d-flex justify-content-center" [formGroup]="signIn" (ngSubmit)="onSignUp()" novalidate>
+<form class="row g-3 m-lg-5 d-flex justify-content-center" [formGroup]="signIn" (ngSubmit)="on_Sign_Up()" novalidate>
 
   <div class="row g-2 justify-content-center">
  
     <div class="col-md-5">
 
-      <label for="username" class="form-label">Display Name</label>
-      <input type="text" formControlName="username" class="form-control" id="inputusername" placeholder="Enter Username">
-      <div *ngIf="signUp_details.username.touched && signUp_details.username.invalid" class="text-danger">
-        <div *ngIf="signUp_details.username.errors?.['required']" class="text-danger">Display name is Required</div>
+      <label for="displayname" class="form-label">Display Name</label>
+      <input type="text" formControlName="displayname" class="form-control" id="inputusername" placeholder="Enter display name">
+      <div *ngIf="signUp_details.displayname.touched && signUp_details.displayname.invalid" class="text-danger">
+        <div *ngIf="signUp_details.displayname.errors?.['required']" class="text-danger">Display name is Required</div>
       </div>
 
     </div>
@@ -52,8 +52,8 @@
   </div>
 
     
-    <div class="d-grid gap-2 col-10 d-md-block text-center">
-      <button type="submit" [disabled]="!signIn.valid" class="btn btn-primary col-md-2 text-center">Sign in</button>
-    </div>
+  <div class="d-grid gap-2 col-10 d-md-block text-center">
+    <button type="submit" [disabled]="!signIn.valid" class="btn btn-primary col-md-2 text-center">Sign in</button>
+  </div>
 
 </form>

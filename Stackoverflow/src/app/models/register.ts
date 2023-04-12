@@ -1,7 +1,5 @@
-export interface RegistrationModel {
-    username: string;
-    name: string;
+export interface SignUpModel {
+    displayname: string;
     email: string;
     password: string;
-    confirm_password: string;
   }
