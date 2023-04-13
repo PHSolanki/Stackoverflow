@@ -34,27 +34,36 @@ export class SignUpComponent {
   get signUp_details(){
     return this.signIn.controls
   }
-
-
+  errr=""
+  signup:any
   on_Sign_Up(){
+    this.signup=JSON.parse(localStorage.getItem("Sign_up_User"))
+if(!this.signup){
 
-    if(this.signIn.valid){
-
-      console.log(this.signIn.value)
-      this._userauthservice.post_Sign_Up_data(this.signIn.value).subscribe((sign_up_res:any)=>{
-
-        if(sign_up_res){
-
-          console.log("sign_up_res",sign_up_res)
-          
-          localStorage.setItem("Sign_up_User",JSON.stringify(this.signIn.value))
-
-          this.router.navigate(['/users/login'])
-          
-        }
-      })
-    }
-
+  if(this.signIn.valid){
+    
+    console.log(this.signIn.value)
+    this._userauthservice.post_Sign_Up_data(this.signIn.value).subscribe((sign_up_res:any)=>{
+      
+      if(sign_up_res){
+        
+        console.log("sign_up_res",sign_up_res)
+        
+        this.signup=localStorage.setItem("Sign_up_User",JSON.stringify(this.signIn.value))
+        
+        this.router.navigate(['/home'])
+        
+      }
+    })
   }
+  
+}else{
+this.errr="You already Signup"
+setTimeout(() => {
+  
+  this.router.navigate(['/home'])
+}, 2000);
+}
+}
 
 }
