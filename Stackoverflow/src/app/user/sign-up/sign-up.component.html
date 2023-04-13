@@ -45,6 +45,7 @@
       <div *ngIf="signUp_details.password.touched && signUp_details.password.invalid" class="text-danger">
         <div *ngIf="signUp_details.password.errors?.['required']" class="text-danger">Password is Required</div>
         <div *ngIf="signUp_details.password.errors?.['minlength']" class="text-danger">Password Should be 8 Character</div>
+        <div *ngIf="signUp_details.password.errors?.['pattern']" class="text-danger">Password Should Match Pattern</div>
       </div>
 
     </div>
@@ -52,6 +53,9 @@
   </div>
 
     
+  <div class="d-grid gap-2 col-10 d-md-block text-center text-danger">
+    {{errr}}
+    </div>
   <div class="d-grid gap-2 col-10 d-md-block text-center">
     <button type="submit" [disabled]="!signIn.valid" class="btn btn-primary col-md-2 text-center">Sign in</button>
   </div>

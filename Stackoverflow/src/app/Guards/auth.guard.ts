@@ -12,9 +12,9 @@ export class AuthGuard implements CanActivate {
 
       let Login_User=JSON.parse(localStorage.getItem("Login cred")!)
       if(Login_User){
-        return true;
+        return false;
       }else{
-        return false
+        return true
       }
   }
   

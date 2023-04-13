@@ -17,6 +17,7 @@
 
   <div *ngIf="get_user_login_details.email.touched && get_user_login_details.email.invalid" class="text-danger text-center">
     <div *ngIf="get_user_login_details.email.errors?.['required']" class="text-danger">Email is Required</div>
+    <div *ngIf="get_user_login_details.email.errors?.['email']" class="text-danger">Email is Pattern match</div>
   </div>
 
   <div class="row g-3 d-flex justify-content-center">
@@ -31,6 +32,8 @@
     <div *ngIf="get_user_login_details.password.touched && get_user_login_details.password.invalid" class="text-danger text-center">
       <div *ngIf="get_user_login_details.password.errors?.['required']" class="text-danger">Password is Required</div>
       <div *ngIf="get_user_login_details.password.errors?.['minlength']" class="text-danger">Log in Password Should be 8 Character</div>
+      <div *ngIf="get_user_login_details.password.errors?.['pattern']" class="text-danger">Password Should Match Pattern</div>
+
     </div>
 
   </div>

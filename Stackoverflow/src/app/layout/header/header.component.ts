@@ -16,15 +16,15 @@ export class HeaderComponent {
           if(login_user){
             this.btn=""
             
-          }else{
-            this.btn="Login"
-          }
-          let Register_user=JSON.parse(localStorage.getItem('Sign_up_user')!)
-          if(Register_user){
             this.Registered_User=false
           }else{
+            this.btn="Login"
             this.Registered_User=true
           }
+          // let Register_user=JSON.parse(localStorage.getItem('Sign_up_user')!)
+          // if(Register_user){
+          // }else{
+          // }
         }
       }
     })
